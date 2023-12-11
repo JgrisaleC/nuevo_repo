@@ -49,38 +49,3 @@ palabra_oculta = list(palabra_adivinada)
 incorrectas = []
 
 vidas = 10
-
-while vidas >= 1:
-    
-    letra = input('por favor ingrese una letra: ')
-    
-    if letra in palabra:        
-        for pos, char in enumerate(palabra):
-            if char == letra:
-                palabra_oculta[pos] = char
-        
-        palabra_adivinada = list_to_palabra(palabra_oculta)
-        print(palabra_adivinada)
-        
-        if palabra_adivinada == palabra:
-            print('¡Felicidades ha ganado el juego!')
-            break     
-
-    else:
-        vidas -= 1
-        print(f"Tiene {vidas} vidas")
-        print(palabra_adivinada)
-        incorrectas.append(letra)
-        print('letras incorrectas: ',incorrectas)
-
-else:
-    print(f"Ha perdido el juego :( la palabra oculta era {palabra}")
-
-
-
-
-
-
-
-
-
